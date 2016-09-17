@@ -35,7 +35,7 @@ import net.minecraft.util.Vec3;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid = References.MOD_ID, version = References.MOD_VERSION, name = References.MOD_NAME, dependencies = References.DEPENDENCIES)
+@Mod(modid = References.MOD_ID, version = References.version, name = References.MOD_NAME, dependencies = References.DEPENDENCIES)
 public class Main {
 	
 	@Mod.Instance

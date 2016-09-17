@@ -11,5 +11,4 @@ public class BiomeGenFlagFurra extends BiomeGenBaseFurra{
 		this.setColor(16711680);
 		this.setHeight(new Height(2.5f, 0.4f));
 	}
-
 }
