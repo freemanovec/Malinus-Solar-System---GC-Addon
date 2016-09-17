@@ -1,9 +1,13 @@
 package cz.freemanovec.malinus.planets.biomegenbases;
 
+import cz.freemanovec.malinus.ConfigurationCLS;
+import cz.freemanovec.malinus.planets.biomegenflags.BiomeGenFlagRainbow;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenBaseRainbow extends BiomeGenBase{
 
+	public static final BiomeGenBase rainbow = new BiomeGenFlagRainbow(ConfigurationCLS.biomeID_rainbow).setBiomeName("rainbow");
+	
 	public BiomeGenBaseRainbow(int p_i1971_1_) {
 		super(p_i1971_1_);
 		this.spawnableMonsterList.clear();

@@ -1,16 +1,15 @@
 package cz.freemanovec.malinus.planets.biomegenbases;
 
+import cz.freemanovec.malinus.ConfigurationCLS;
+import cz.freemanovec.malinus.planets.biomegenflags.BiomeGenFlagFurra;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenBaseFurra extends BiomeGenBase{
 
+	public static final BiomeGenBase furra = new BiomeGenFlagFurra(ConfigurationCLS.biomeID_furra).setBiomeName("furra");
+	
 	public BiomeGenBaseFurra(int p_i1971_1_) {
 		super(p_i1971_1_);
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
-		this.rainfall = 0;
-		this.flowers.clear();
 	}
 	@Override
 	public BiomeGenBaseFurra setColor(int var1){
