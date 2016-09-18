@@ -8,6 +8,11 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.relauncher.Side;
+import cz.freemanovec.malinus.planets.providers.WorldProviderFurra;
+import cz.freemanovec.malinus.planets.providers.WorldProviderOrion;
+import cz.freemanovec.malinus.planets.teleporttypes.TeleportTypeFurra;
+import cz.freemanovec.malinus.planets.teleporttypes.TeleportTypeOrion;
+import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
@@ -16,6 +21,7 @@ import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.planets.IPlanetsModule;
+import micdoodle8.mods.galacticraft.planets.mars.MarsModule;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
@@ -105,6 +111,9 @@ public class MalinusSystemModule implements IPlanetsModule{
 		moonRainbow.setTierRequired(3);
 		moonAllegia.setTierRequired(3);
 		
+		planetOrion.setDimensionInfo(ConfigurationCLS.dimensionID_orion, WorldProviderOrion.class);
+		planetFurra.setDimensionInfo(ConfigurationCLS.dimensionID_furra, WorldProviderFurra.class);
+		
 		GalaxyRegistry.registerPlanet(planetOrion);
 		GalaxyRegistry.registerPlanet(planetFurra);
 		GalaxyRegistry.registerPlanet(planetSierra);
@@ -112,6 +121,12 @@ public class MalinusSystemModule implements IPlanetsModule{
 		GalaxyRegistry.registerMoon(moonNova);
 		GalaxyRegistry.registerMoon(moonRainbow);
 		GalaxyRegistry.registerMoon(moonAllegia);
+		
+		GalacticraftRegistry.registerTeleportType(WorldProviderOrion.class, new TeleportTypeOrion());
+		GalacticraftRegistry.registerTeleportType(WorldProviderFurra.class, new TeleportTypeFurra());
+		
+		GalacticraftRegistry.registerRocketGui(WorldProviderOrion.class, new ResourceLocation(MarsModule.ASSET_PREFIX, "textures/gui/marsRocketGui.png"));
+		GalacticraftRegistry.registerRocketGui(WorldProviderFurra.class, new ResourceLocation(MarsModule.ASSET_PREFIX, "textures/gui/marsRocketGui.png"));
 	}
 
 	@Override

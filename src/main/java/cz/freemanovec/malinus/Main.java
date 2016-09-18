@@ -74,35 +74,6 @@ public class Main {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event){
-		/*Vector3 solarPosition = new Vector3(Vec3.createVectorHelper(-1.3f,0,0));
-		Main.solarSystemMalinus = new SolarSystem("kundus", "milkyWay").setMapPosition(solarPosition);
-		Star starKundus = (Star) new Star("kundus").setParentSolarSystem(solarSystemMalinus).setTierRequired(-1);
-		starKundus.setBodyIcon(new ResourceLocation("malinus", "/textures/gui/celestialbodies/malinus.png"));
-		Main.solarSystemMalinus.setMainStar(starKundus);
-		
-		GalaxyRegistry.registerSolarSystem(solarSystemMalinus);
-		
-		planetFurra = new Planet("furra").setParentSolarSystem(solarSystemMalinus);
-		planetSierra = new Planet("sierra").setParentSolarSystem(solarSystemMalinus);
-		planetTango = new Planet("tango").setParentSolarSystem(solarSystemMalinus);
-		
-		planetFurra.setBodyIcon(new ResourceLocation("malinus","/textures/gui/celestialbodies/furra.png"));
-		planetSierra.setBodyIcon(new ResourceLocation("malinus","/textures/gui/celestialbodies/sierra.png"));
-		planetTango.setBodyIcon(new ResourceLocation("malinus","/textures/gui/celestialbodies/tango.png"));
-		
-		planetFurra.setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(1.45F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(0.9f, 0.9f)).setRelativeOrbitTime(0.8835f);
-		planetSierra.setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(1.45F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(1.65f, 1.65f)).setRelativeOrbitTime(0.8353f);
-		planetTango.setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(1.45F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(4.2f, 4.2f)).setRelativeOrbitTime(13.8471f);
-		
-		planetFurra.setRelativeSize(0.4319f);
-		planetSierra.setRelativeSize(0.5216f);
-		planetTango.setRelativeSize(1.054f);
-		
-		GalaxyRegistry.registerPlanet(planetFurra);
-		GalaxyRegistry.registerPlanet(planetSierra);
-		GalaxyRegistry.registerPlanet(planetTango);*/
-		
-		
 		
 	}
 	
