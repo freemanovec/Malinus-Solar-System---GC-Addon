@@ -6,29 +6,27 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomeDecoratorOrion extends BiomeDecoratorSpace{
-
-	private WorldGenerator glassGen;
+public class BiomeDecoratorAllegia extends BiomeDecoratorSpace{
+	
+	private WorldGenerator ironGen;
 	private World currentWorld;
 	
-	public BiomeDecoratorOrion(){
-		//this.glassGen = new WorldGenMinableMeta(Blocks.glass, 18, 0, true, Blocks.sandstone, 6);
-		this.glassGen = new WorldGenMinableMeta(Blocks.glass, 18, 0, true, Blocks.sandstone, 0);
+	public BiomeDecoratorAllegia(){
+		this.ironGen = new WorldGenMinableMeta(Blocks.iron_ore, 40, 0, false, Blocks.stone, 0);
 	}
 	
 	@Override
-	protected void setCurrentWorld(World world) {
+	protected void setCurrentWorld(World world){
 		this.currentWorld = world;
 	}
-
+	
 	@Override
 	protected World getCurrentWorld() {
 		return this.currentWorld;
 	}
-
+	
 	@Override
-	protected void decorate() {
-		this.generateOre(4, this.glassGen, 60, 120);
+	protected void decorate(){
+		this.generateOre(10, ironGen, 0, 150);
 	}
-
 }
