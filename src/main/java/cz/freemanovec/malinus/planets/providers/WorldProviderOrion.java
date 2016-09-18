@@ -77,7 +77,7 @@ public class WorldProviderOrion extends WorldProviderSpace implements IGalacticr
 	@Override
 	public Vector3 getSkyColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
-		Main.log.info("xxxxxx Values of sky: " + new Vector3(154 / 255.0F * f, 114 / 255.0F * f, 66 / 255.0F * f));
+		//Main.log.info("xxxxxx Values of sky: " + new Vector3(154 / 255.0F * f, 114 / 255.0F * f, 66 / 255.0F * f));
 		//Vector3 sky = new Vector3(154 / 255.0F * f, 114 / 255.0F * f, 66 / 255.0F * f); //ORIGINAL ORANGE
 		//Vector3 sky = new Vector3(255/255.0f * f, 0 / 255.0f * f, 0 / 255.0f *f); //RED
 		//Vector3 sky = new Vector3(0/255.0f * f, 255 / 255.0f * f, 0 / 255.0f *f); //GREEN
