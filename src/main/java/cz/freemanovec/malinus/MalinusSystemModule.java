@@ -104,6 +104,14 @@ public class MalinusSystemModule implements IPlanetsModule{
 		moonNova.setTierRequired(1);
 		moonRainbow.setTierRequired(3);
 		moonAllegia.setTierRequired(3);
+		
+		GalaxyRegistry.registerPlanet(planetOrion);
+		GalaxyRegistry.registerPlanet(planetFurra);
+		GalaxyRegistry.registerPlanet(planetSierra);
+		GalaxyRegistry.registerPlanet(planetTango);
+		GalaxyRegistry.registerMoon(moonNova);
+		GalaxyRegistry.registerMoon(moonRainbow);
+		GalaxyRegistry.registerMoon(moonAllegia);
 	}
 
 	@Override

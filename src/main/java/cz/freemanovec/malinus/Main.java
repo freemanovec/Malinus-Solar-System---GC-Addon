@@ -65,19 +65,19 @@ public class Main {
 		ConfigurationCLS.syncConfig();
 		
 		GalacticraftPlanets.commonModules.put("ModuleOrion", new ModuleOrion());
+		GalacticraftPlanets.commonModules.put("ModuleMalinusSolarSystem", new MalinusSystemModule());
 		
-		
-		
+		blockRainbow = new BlockRainbow();
 		//GalacticraftPlanets.proxy.preInit(event);
 	}
 	//public static Planet planetOrion;
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event){
-		Vector3 solarPosition = new Vector3(Vec3.createVectorHelper(-1.3f,0,0));
+		/*Vector3 solarPosition = new Vector3(Vec3.createVectorHelper(-1.3f,0,0));
 		Main.solarSystemMalinus = new SolarSystem("kundus", "milkyWay").setMapPosition(solarPosition);
 		Star starKundus = (Star) new Star("kundus").setParentSolarSystem(solarSystemMalinus).setTierRequired(-1);
-		starKundus.setBodyIcon(new ResourceLocation("orion", "/textures/gui/celestialbodies/kundus.png"));
+		starKundus.setBodyIcon(new ResourceLocation("malinus", "/textures/gui/celestialbodies/malinus.png"));
 		Main.solarSystemMalinus.setMainStar(starKundus);
 		
 		GalaxyRegistry.registerSolarSystem(solarSystemMalinus);
@@ -86,9 +86,9 @@ public class Main {
 		planetSierra = new Planet("sierra").setParentSolarSystem(solarSystemMalinus);
 		planetTango = new Planet("tango").setParentSolarSystem(solarSystemMalinus);
 		
-		planetFurra.setBodyIcon(new ResourceLocation("orion","/textures/gui/celestialbodies/furra.png"));
-		planetSierra.setBodyIcon(new ResourceLocation("orion","/textures/gui/celestialbodies/sierra.png"));
-		planetTango.setBodyIcon(new ResourceLocation("orion","/textures/gui/celestialbodies/tango.png"));
+		planetFurra.setBodyIcon(new ResourceLocation("malinus","/textures/gui/celestialbodies/furra.png"));
+		planetSierra.setBodyIcon(new ResourceLocation("malinus","/textures/gui/celestialbodies/sierra.png"));
+		planetTango.setBodyIcon(new ResourceLocation("malinus","/textures/gui/celestialbodies/tango.png"));
 		
 		planetFurra.setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(1.45F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(0.9f, 0.9f)).setRelativeOrbitTime(0.8835f);
 		planetSierra.setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(1.45F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(1.65f, 1.65f)).setRelativeOrbitTime(0.8353f);
@@ -100,10 +100,10 @@ public class Main {
 		
 		GalaxyRegistry.registerPlanet(planetFurra);
 		GalaxyRegistry.registerPlanet(planetSierra);
-		GalaxyRegistry.registerPlanet(planetTango);
+		GalaxyRegistry.registerPlanet(planetTango);*/
 		
 		
-		blockRainbow = new BlockRainbow();
+		
 	}
 	
 	@EventHandler
