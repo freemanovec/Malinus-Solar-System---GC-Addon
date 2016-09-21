@@ -11,8 +11,6 @@ public class BiomeDecoratorFurra extends BiomeDecoratorSpace{
 	private World currentWorld;
 	
 	public BiomeDecoratorFurra(){
-		//this.ironGen = new WorldGenMinableMeta(Blocks.iron_ore, 80, 0, false, Blocks.stone, 0);
-		//this.goldGen = new WorldGenMinableMeta(Blocks.gold_ore, 20, 0, false, Blocks.stone, 0);
 	}
 	
 	@Override
@@ -27,7 +25,5 @@ public class BiomeDecoratorFurra extends BiomeDecoratorSpace{
 	
 	@Override
 	protected void decorate(){
-		//this.generateOre(10, ironGen, 0, 150);
-		//this.generateOre(10, goldGen, 0, 150);
 	}
 }
