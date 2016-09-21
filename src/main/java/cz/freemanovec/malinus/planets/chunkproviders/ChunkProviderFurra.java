@@ -148,12 +148,21 @@ public class ChunkProviderFurra extends ChunkProviderSpace{
 		Main.log.error("Provider Name -> " + toDump.getProviderName());
 		Main.log.error("Provider - Dimension ID -> " + toDump.provider.dimensionId);
 		Main.log.error("Provider - Dimension Name -> " + toDump.provider.getDimensionName());
-		Main.log.error("Provider - Terrain type -> " + toDump.provider.terrainType);
+		Main.log.error("Provider - Terrain Type -> " + toDump.provider.terrainType);
+		Main.log.error("Provider - Generator Options -> " + toDump.provider.field_82913_c);
+		Main.log.error("Provider - Terrain Type - World Chunk Manager -> " + toDump.provider.terrainType.getChunkManager(toDump));
 		Main.log.error("Provider - World Chunk Manager -> " + toDump.provider.worldChunkMgr);
 		if(toDump.provider.worldChunkMgr==null){
 			Main.log.error("Registering World Chunk Manager");
 			toDump.provider.registerWorld(toDump);
-			Main.log.error("Provider - World Chunk Manager (Registered) -> " + toDump.provider.worldChunkMgr);
+			Main.log.error("Provider - World Chunk Manager (Registered I) -> " + toDump.provider.worldChunkMgr);
+		}
+		if(toDump.provider.worldChunkMgr==null){
+			Main.log.error("Manually assigning World Chunk Manager");
+			WorldChunkManager toAssign = toDump.provider.terrainType.getChunkManager(toDump);
+			toDump.provider.worldChunkMgr = toAssign;
+			Main.log.error("Terrain Type - Get Chunk Manager -> " + toAssign);
+			Main.log.error("Provider - World Chunk Manager (Registered II) -> " + toDump.provider.worldChunkMgr);
 		}
 		Main.log.error("Provider - World Chunk Manager - Class -> " + toDump.provider.worldChunkMgr.getClass());
 		Main.log.error("Provider - World Object -> " + toDump.provider.worldObj);
