@@ -45,7 +45,7 @@ public class WorldProviderFurra extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public float getThermalLevelModifier() {
-		return 0;
+		return 1;
 	}
 
 	@Override
@@ -72,7 +72,7 @@ public class WorldProviderFurra extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public boolean canRainOrSnow() {
-		return true;
+		return false;
 	}
 
 	@Override

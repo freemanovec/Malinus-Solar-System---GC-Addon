@@ -78,6 +78,9 @@ public class ChunkProviderFurra extends ChunkProviderSpace{
 	
 	public ChunkProviderFurra(World par1World, long seed, boolean mapFeaturesEnabled) {
 		super(par1World, seed, mapFeaturesEnabled);
+		Main.log.error("Initialization data dump and assigment");
+		worldObjDataDump(super.worldObj, true);
+		Main.log.error("Initialization data dumped and assigned");
 		//super.worldObj.provider.registerWorld(super.worldObj);
 		//this.worldObj = par1World;
 		this.mapFeaturesEnabled = mapFeaturesEnabled;
@@ -145,7 +148,11 @@ public class ChunkProviderFurra extends ChunkProviderSpace{
 		Main.log.error("World Info - Terrain Type -> " + toDump.getWorldInfo().getTerrainType());
 		Main.log.error("World Chunk Manager -> " + toDump.getWorldChunkManager());
 		Main.log.error("Provider -> " + toDump.provider);
-		Main.log.error("Provider Name -> " + toDump.getProviderName());
+		try{
+			Main.log.error("Provider Name -> " + toDump.getProviderName());
+		}catch(Exception e){
+			Main.log.error("Provider Name -> " + "ERR: CRASHED");
+		}
 		Main.log.error("Provider - Dimension ID -> " + toDump.provider.dimensionId);
 		Main.log.error("Provider - Dimension Name -> " + toDump.provider.getDimensionName());
 		Main.log.error("Provider - Terrain Type -> " + toDump.provider.terrainType);
@@ -175,13 +182,9 @@ public class ChunkProviderFurra extends ChunkProviderSpace{
 		if(super.worldObj.getWorldChunkManager()==null){
 			
 			worldObjDataDump(super.worldObj, true);
-			
-			//Main.log.info("xxxxxxxxx ---------- WorldChunkManager is null, registering");
-			
-			/*WorldSettings worldSettings = new WorldSettings(super.worldObj.getWorldInfo().getSeed(),super.worldObj.getWorldInfo().getGameType(),super.worldObj.getWorldInfo().isMapFeaturesEnabled(),super.worldObj.getWorldInfo().isHardcoreModeEnabled(),super.worldObj.getWorldInfo().getTerrainType());
-			World worldSubstitued = new World(super.worldObj.getSaveHandler(), super.worldObj.getWorldInfo().getWorldName(), worldSettings, super.worldObj.provider, super.worldObj.theProfiler);
-			//super.worldObj.provider.registerWorld(super.worldObj);
-			//super.worldObj.provider = WorldProvider.getProviderForDimension(ConfigurationCLS.dimensionID_furra);*/
+			super.worldObj.provider.registerWorld(super.worldObj);
+			if(super.worldObj.getWorldChunkManager()==null)
+				Main.log.fatal("It is still null :/");
 			return new Chunk(super.worldObj, new Block[32768 * 2], new byte[32768 * 2], p_73154_1_, p_73154_2_);
 		}
         this.rand.setSeed((long)p_73154_1_ * 341873128712L + (long)p_73154_2_ * 132897987541L);
@@ -224,6 +227,10 @@ public class ChunkProviderFurra extends ChunkProviderSpace{
         	
         	Main.log.info("xxxxxxxx ------- ChunkManager is null, registering dimension");
         	super.worldObj.provider.registerWorld(super.worldObj);
+        	
+        	if(super.worldObj.getWorldChunkManager()==null)
+				Main.log.fatal("It is still null :/");
+        	
         	return;
         }
         World par1 = super.worldObj;
